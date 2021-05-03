@@ -1,24 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import { Provider } from 'react-redux';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
-import { StorageContext } from './context';
+import './index.css';
 import store from './redux/store';
+import reportWebVitals from './reportWebVitals';
 
-const render = () => {
-  ReactDOM.render(
-    <React.StrictMode>
-      <StorageContext.Provider value={store}>
-        <App />
-      </StorageContext.Provider>
-    </React.StrictMode>,
-    document.getElementById('root')
-  );
-};
-
-store.subscribe(render);
-
-render();
+ReactDOM.render(
+  <React.StrictMode>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </React.StrictMode>,
+  document.getElementById('root')
+);
 
 reportWebVitals();

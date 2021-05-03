@@ -5,7 +5,7 @@ const Form = (props) => {
   const decrement = () => props.decrement();
   return (
     <div>
-      <div>Counter : {props.state.counter}</div>
+      <div>Counter 2: {props.counter}</div>
       <div>
         <button onClick={increment}>INC</button>
         <button onClick={decrement}>DEC</button>

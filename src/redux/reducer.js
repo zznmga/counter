@@ -5,11 +5,9 @@ const initialState = { counter: 0 };
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case ACTION_DECREMENT:
-      state.counter = state.counter - 1;
-      return state;
+      return { ...state, counter: state.counter - 1 };
     case ACTION_INCREMENT:
-      state.counter = state.counter + 1;
-      return state;
+      return { ...state, counter: state.counter + 1 };
     default:
       return state;
   }
